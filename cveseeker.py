@@ -1,7 +1,7 @@
 import nmap
 import requests
 
-class cve_seeker:
+class CveSeeker:
 
   def __init__(self, hosts):
     self.hosts = hosts
