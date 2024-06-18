@@ -3,11 +3,12 @@ import requests
 
 class CveSeeker:
 
-  def __init__(self, hosts, top_ports):
+  def __init__(self, hosts, top_ports, threads=25):
     self.hosts = hosts
     self.top_ports = top_ports
+    self.threads = threads
 
-  def get_ports_lst(self):
+  def _get_ports_lst(self):
     if self.top_ports == "all":
       ports_lst = [1-65535]
     elif self.top_ports == "100":
@@ -17,4 +18,12 @@ class CveSeeker:
 
     return ports_lst
 
+  def _get_filtered_hosts_lst(self):
+    with open(self.hosts, "r") as f:
+      hosts_lst = f.read().split("\n")
   
+  def scan_hosts(self):
+    hosts_lst = 
+    ports_lst = self._get_ports_lst()
+    nm_scan
+    return scan_results
